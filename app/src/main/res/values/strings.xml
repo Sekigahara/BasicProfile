@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyProfile</string>
+    <string name="username_string">Enter Your Username</string>
+    <string name="password_string">Enter Your Password</string>
+    <string name="wrong_credential_message">Username or Password is Incorrect</string>
+    <string name="textView_fullName">Full Name</string>
+    <string name="textView_birth">Birth</string>
+    <string name="textView_bloodType">Blood Type</string>
+    <string name="textView_username">Username</string>
+    <string name="textView_password">Password</string>
+    <string name="button_string">Login</string>
+</resources>
