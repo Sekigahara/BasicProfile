@@ -9,20 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Baru">
-        <activity android:name=".MainActivity">
+        <activity android:name=".base.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfilePage"
-            android:label="Profile Page"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.myprofile.MainActivity" />
-        </activity>
+        <activity android:name=".base.profile.ProfileActivity"> </activity>
     </application>
 
 </manifest>

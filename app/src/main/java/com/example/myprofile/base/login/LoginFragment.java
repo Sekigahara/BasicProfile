@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.myprofile.ProfilePage;
 import com.example.myprofile.R;
 import com.example.myprofile.base.BaseFragment;
+import com.example.myprofile.base.profile.ProfileActivity;
 
 public class LoginFragment extends BaseFragment<LoginActivity, LoginContract.Presenter> implements LoginContract.View{
     EditText etUsername;
@@ -23,7 +23,7 @@ public class LoginFragment extends BaseFragment<LoginActivity, LoginContract.Pre
 
     public android.view.View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         super.onCreateView(inflater, container, savedInstanceState);
-        fragmentView = inflater.inflate(R.layout.activity_main, container, false);
+        fragmentView = inflater.inflate(R.layout.fragment_login, container, false);
         mPresenter = new LoginPresenter(this);
         mPresenter.start();
 
@@ -32,7 +32,7 @@ public class LoginFragment extends BaseFragment<LoginActivity, LoginContract.Pre
         btnLogin = fragmentView.findViewById(R.id.login_button);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+            public void onClick(View view) {
                 loginRedirect();
             }
         });
@@ -52,9 +52,9 @@ public class LoginFragment extends BaseFragment<LoginActivity, LoginContract.Pre
         mPresenter = presenter;
     }
 
-    public void redirectToProfile(String[] account){
-        Intent intent = new Intent(activity, ProfilePage.class);
-        intent.putExtra("account", account);
+    public void redirectToProfile(String username){
+        Intent intent = new Intent(activity, ProfileActivity.class);
+        intent.putExtra("USERNAME_KEY", username);
         startActivity(intent);
         activity.finish();
     }

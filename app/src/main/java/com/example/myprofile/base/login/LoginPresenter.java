@@ -1,11 +1,7 @@
 package com.example.myprofile.base.login;
 
-import android.content.Intent;
-import android.view.View;
-import android.widget.Toast;
-
-import com.example.myprofile.ProfilePage;
-import com.example.myprofile.R;
+import android.content.Context;
+import android.content.SharedPreferences;
 
 public class LoginPresenter implements LoginContract.Presenter{
     private final LoginContract.View view;
@@ -17,9 +13,7 @@ public class LoginPresenter implements LoginContract.Presenter{
 
     public void performLogin(String username, String password){
         if(username.equals("origami") && password.equals("origami")) {
-            String[] account = {"origami", "origami"};
-
-            view.redirectToProfile(account);
+            view.redirectToProfile(username);
         }
     }
 }

@@ -10,8 +10,6 @@ import com.example.myprofile.R;
 
 
 public abstract  class BaseActivity extends FragmentActivity implements FragmentListener{
-
-
     protected BaseFragment currentFragment;
 
     @Override
@@ -24,6 +22,10 @@ public abstract  class BaseActivity extends FragmentActivity implements Fragment
     protected abstract void initializeFragment();
 
     protected abstract void initializeView();
+
+    public void setCurrentFragment(BaseFragment currentFragment){
+        setCurrentFragment(currentFragment, false);
+    }
 
     protected void setCurrentFragment(BaseFragment fragment, boolean addToBackStack) {
         FragmentManager fragmentManager = getSupportFragmentManager();

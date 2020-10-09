@@ -1,14 +1,16 @@
-package com.example.myprofile.base.login;
+package com.example.myprofile.base.profile;
 
 import com.example.myprofile.base.BasePresenter;
 import com.example.myprofile.base.BaseView;
 
-public interface LoginContract {
+public interface ProfileContract {
     interface View extends BaseView<Presenter> {
-        void redirectToProfile(String username);
+        void returnLogin();
+
+        void setProfile();
     }
 
     interface Presenter extends BasePresenter {
-        void performLogin(String username, String password);
+        void getProfile();
     }
 }
